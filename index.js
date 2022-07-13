@@ -23,7 +23,11 @@ app.use(express.json());
 
 const routes = require('./routes/routes');
 
-app.use('/api', routes)
+app.use('/',(req,res) => {
+    res.send("The Tutorial 7 app is working")
+})
+
+app.use('/api', routes);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
